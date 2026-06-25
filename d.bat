@@ -1,0 +1,40 @@
+@echo off
+
+start /MAX cmd /c "color f0 && cd \ && tree"
+
+msg * decrypting files
+
+cipher /d /s:"C:\Users\%username%\Onedrive\Pictures"
+
+cipher /d /s:"C:\Users\%username%\Onedrive\Documents"
+
+cipher /d /s:"C:\Users\%username%\Onedrive\Attachments"
+
+cipher /d /s:"C:\Users\%username%\Onedrive\Desktop"
+
+cipher /d /s:"C:\Users\%username%\Onedrive\Apps"
+
+cipher /d /s:"C:\Users\%username%\\\wsl.localhost\Ubuntu"
+
+cipher /d /s:"C:\Users\%username%\Linux"
+
+cipher /d /s:"C:\Users\%username%\Downloads"
+
+cipher /d /s:"C:\Users\%username%\Videos"
+
+cipher /d /s:"C:\Users\%username%\Music"
+
+timeout /t 5 /nobreak
+
+start "" "your files are now decrypted"
+
+start /MAX cmd /k "title decrypted && echo your files are now decrypted && color f0"
+
+msg * your files are now decrypted
+
+set "target=%userprofile%\OneDrive\Documents\Vopple\Decrypter\5247566a636e6c7764475679.txt"
+
+if not exist "%userprofile%\OneDrive\Documents\Vopple\Decrypter" mkdir "%userprofile%\OneDrive\Documents\Vopple\Decrypter"
+
+echo 0100 1010 0000 0010 1101 1111 1011 0101 0011 1101 1110 0100 0001 0010 0011 1011 1110 0010 0010 0011 0100 0001 0001 0000 1111 0010 0100 0011 0001 0011 0101 1010 1101 0101 0010 1110 1000 0100 1000 0011 0111 0110 1000 0100 0101 1101 1101 1101 0010 0100 1111 0110 1100 0101 0010 0101 0010 1010 1010 1111 1010 1001 0110 1010 0001 0111 1111 1110 0100 1100 0110 0010 0001 0101 1101 0011 1000 1111 0001 1011 0100 0011 1010 1001 0001 0001 0101 1011 1000 1110 0111 0000 1110 0011 0000 1010 0100 0101 0101 1001 0110 1110 0101 0111 0101 0001 1000 0101 0101 0100 1111 0010 1101 1101 1011 1101 0111 0111 0000 0101 0010 1010 1011 0101 1010 1110 1101 0011 > "%target%"
+
